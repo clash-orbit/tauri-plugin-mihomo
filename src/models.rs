@@ -669,7 +669,7 @@ pub struct Proxy {
 }
 
 string_enum! {
-    #[derive(Debug, TS, PartialEq, Eq)]
+    #[derive(Debug, Clone, TS, PartialEq, Eq)]
     #[ts(export)]
     pub enum ProxyType {
         Direct => "Direct",
@@ -716,7 +716,7 @@ pub struct Extra {
     pub history: Vec<DelayHistory>,
 }
 
-#[derive(Debug, Serialize, Deserialize, TS, PartialEq, Eq, Default)]
+#[derive(Debug, Clone, Serialize, Deserialize, TS, PartialEq, Eq, Default)]
 #[serde(default)]
 #[ts(export)]
 pub struct DelayHistory {
